@@ -8,4 +8,4 @@ functions:
     handler: ./clouddemo
     image: martindekov/clouddemo:latest
     environment:
-      dark: false
+      dark: true
