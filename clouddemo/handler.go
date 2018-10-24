@@ -2,8 +2,10 @@ package function
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
 	"html/template"
+	"io/ioutil"
 	"os"
 	"strconv"
 )
@@ -14,6 +16,12 @@ type HomepageTokens struct {
 
 // Handle a serverless request
 func Handle(req []byte) string {
+
+	if os.Getenv("Http_Path") == "/cloud.png" {
+		img, _ := ioutil.ReadFile("./cloud.png")
+		output := base64.StdEncoding.EncodeToString(image)
+		return string(output)
+	}
 
 	dark := true
 
