@@ -9,3 +9,4 @@ functions:
     image: martindekov/clouddemo:latest
     environment:
       dark: true
+
