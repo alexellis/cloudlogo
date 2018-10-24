@@ -11,17 +11,16 @@ import (
 )
 
 type HomepageTokens struct {
-	Dark bool
+	Dark        bool
+	ImageBase64 string
 }
 
 // Handle a serverless request
 func Handle(req []byte) string {
 
-	if os.Getenv("Http_Path") == "/cloud.png" {
-		image, _ := ioutil.ReadFile("./cloud.png")
-		output := base64.StdEncoding.EncodeToString(image)
-		return string(output)
-	}
+	image, _ := ioutil.ReadFile("./cloud.png")
+	output := base64.StdEncoding.EncodeToString(image)
+	return string(output)
 
 	dark := true
 
@@ -39,7 +38,8 @@ func Handle(req []byte) string {
 	var tpl bytes.Buffer
 
 	err = tmpl.Execute(&tpl, HomepageTokens{
-		Dark: dark,
+		Dark:        dark,
+		ImageBase64: string(image),
 	})
 	if err != nil {
 		return fmt.Sprintf("Internal server error with homepage template: %s", err.Error())
