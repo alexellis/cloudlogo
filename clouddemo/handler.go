@@ -18,7 +18,7 @@ type HomepageTokens struct {
 func Handle(req []byte) string {
 
 	if os.Getenv("Http_Path") == "/cloud.png" {
-		img, _ := ioutil.ReadFile("./cloud.png")
+		image, _ := ioutil.ReadFile("./cloud.png")
 		output := base64.StdEncoding.EncodeToString(image)
 		return string(output)
 	}
