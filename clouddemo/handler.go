@@ -20,7 +20,6 @@ func Handle(req []byte) string {
 
 	image, _ := ioutil.ReadFile("./cloud.png")
 	output := base64.StdEncoding.EncodeToString(image)
-	return string(output)
 
 	dark := true
 
