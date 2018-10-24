@@ -38,7 +38,7 @@ func Handle(req []byte) string {
 
 	err = tmpl.Execute(&tpl, HomepageTokens{
 		Dark:        dark,
-		ImageBase64: string(image),
+		ImageBase64: string(output),
 	})
 	if err != nil {
 		return fmt.Sprintf("Internal server error with homepage template: %s", err.Error())
