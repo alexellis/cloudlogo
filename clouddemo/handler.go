@@ -10,6 +10,7 @@ import (
 	"strconv"
 )
 
+// HomepageTokens contains tokens for Golang HTML template
 type HomepageTokens struct {
 	Dark        bool
 	ImageBase64 string
@@ -45,5 +46,4 @@ func Handle(req []byte) string {
 	}
 
 	return string(tpl.Bytes())
-
 }
