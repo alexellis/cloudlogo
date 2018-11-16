@@ -9,3 +9,4 @@ functions:
     image: alexellis/clouddemo:0.1
     environment:
       dark: false
+
