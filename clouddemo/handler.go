@@ -31,7 +31,7 @@ func Handle(req []byte) string {
 	}
 
 	var err error
-	tmpl, err := template.ParseFiles("./template/index.html")
+	tmpl, err := template.ParseFiles("./templates/index.html")
 	if err != nil {
 		return fmt.Sprintf("Internal server error with homepage: %s", err.Error())
 	}
