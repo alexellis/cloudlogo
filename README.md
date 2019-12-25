@@ -8,3 +8,4 @@ This example shows how to render a HTML page from a Golang function with OpenFaa
 
 
 Alex Ellis
+
